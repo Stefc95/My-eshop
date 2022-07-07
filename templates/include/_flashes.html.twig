@@ -1,17 +1,15 @@
-{% for label,message in app.flashes %}
+{% for label, messages in app.flashes %}
 
     {% for message in messages %}
 
         <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-           {% if label is same as 'success' %}
+            {% if label is same as 'success' %}
                 <span class="alert-inner--icon"><i class="fa fa-thumbs-up"></i></span>
-           {% else %}
+            {% else %}
                 <span class="alert-inner--icon"><i class="fa fa-thumbs-down"></i></span>
-           {% endif %}
-
-           <span class='alert-inner--text'><strong>{{ label | title }} : </strong> {{ message }}</span>
-           
+            {% endif %}
+            <span class="alert-inner--text"><strong>{{ label | title }} : </strong> {{ message }}</span>
         </div>
-    {% endfor %}
-    
-{% endfor %}
+        
+    {%  endfor %}
+{%  endfor %}

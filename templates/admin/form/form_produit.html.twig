@@ -4,7 +4,16 @@
 
 {% block body %}
 
-   	<h1 class="text-center my-4">Ajouter un produit en ligne</h1>
+    {% if produit is not defined %}
+
+        <h1 class="text-center my-4">Ajouter un produit en ligne</h1>
+    
+    {% else %}
+
+        <h1 class="text-center my-4">Modifier le produit {{ produit.title }}</h1>
+
+    {% endif %}
+
 
     <div class="row">
         <div class="col-8 mx-auto">

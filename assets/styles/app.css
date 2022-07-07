@@ -1,0 +1,7 @@
+body {
+    background-color: #31c7f5;
+}
+
+.img-thumbnail{
+    object-fit: cover;
+}
