@@ -88,13 +88,14 @@ class ProduitController extends AbstractController
             /** @var UploadedFile $photo */
             $photo = $form->get('photo')->getData();
 
-            if ($photo === null) {
+            if ($photo) {
 
-               $produit->setPhoto($originalPhoto);
+                $this->handleFile($produit, $photo, $slugger);
               
             } # end if($photo)
             else {
-                $this->handleFile($produit, $photo, $slugger);
+                
+                $produit->setPhoto($originalPhoto);
             }
 
             $entityManager->persist($produit);
